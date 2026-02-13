@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,68 +7,122 @@
 <title>Paryyxd Storeメ | Blood Strike</title>
 
 <style>
-body{margin:0;font-family:sans-serif;background:#05070d;color:white;}
-header{text-align:center;padding:20px;background:#0f172a;}
-header h1{color:#00e5ff;margin:0;}
-
-.container{max-width:500px;margin:auto;padding:15px;}
-.card{background:#111827;padding:15px;border-radius:10px;margin-top:12px;}
-
-input{
-  width:100%;
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  margin-top:8px;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #05070d;
+  color: white;
+}
+header {
+  text-align: center;
+  padding: 20px;
+  background: #0f172a;
+}
+header h1 {
+  color: #00e5ff;
+  margin: 0;
+}
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 15px;
+}
+.card {
+  background: #111827;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.item {
+  background: #1f2937;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.item.active {
+  background: #00e5ff;
+  color: black;
+  font-weight: bold;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.qris { background: #3b82f6; color: white; }
+.chat { background: #22c55e; color: white; }
+#qrisBox {
+  display: none;
+  text-align: center;
+}
+#qrisBox img {
+  width: 220px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
-.item{
-  background:#1f2937;
-  padding:12px;
-  border-radius:8px;
-  margin-top:8px;
-  cursor:pointer;
+/* PROMO SECTION */
+.promo-section {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 500px;
+  color: white;
 }
-.item.active{
-  background:#00e5ff;
-  color:black;
-  font-weight:bold;
+.promo-section h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  animation: pulse 1.5s infinite;
 }
-
-button{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border:none;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
-
-.qris{background:#3b82f6;color:white;}
-.chat{background:#22c55e;color:white;}
-
-#qrisBox{
-  display:none;
-  text-align:center;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-#qrisBox a{
-  color:#3b82f6;
-  text-decoration:underline;
-  font-weight:bold;
+.btn {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.5);
+}
+.btn.wa { background: #25d366; }
+.btn.tiktok { background: #ff0050; }
+.btn.zvs { background: #3b82f6; }
 </style>
 </head>
 
 <body>
-
 <header>
   <h1>Paryyxd Storeメ</h1>
   <p>Top Up Blood Strike ⚡</p>
 </header>
 
 <div class="container">
-
   <div class="card">
     <h3>ID Blood Strike</h3>
     <input type="text" id="userid" placeholder="Masukkan User ID">
@@ -75,75 +130,74 @@ button{
 
   <div class="card">
     <h3>Pilih Gold 💎</h3>
-
     <div class="item" onclick="pilih(this)">100 + 5 Gold — Rp13.000</div>
     <div class="item" onclick="pilih(this)">300 + 20 Gold — Rp34.000</div>
     <div class="item" onclick="pilih(this)">500 + 40 Gold — Rp55.000</div>
     <div class="item" onclick="pilih(this)">1000 + 100 Gold — Rp108.000</div>
     <div class="item" onclick="pilih(this)">2000 + 260 Gold — Rp213.000</div>
     <div class="item" onclick="pilih(this)">5000 + 800 Gold — Rp529.000</div>
-
     <button class="qris" onclick="showQRIS()">Bayar via QRIS</button>
   </div>
 
   <div class="card" id="qrisBox">
-  <h3>Scan QRIS untuk bayar</h3>
-
-  <p style="font-size:16px;">
-    QRIS kamu bisa dibuka di sini:<br>
-    <a href="https://drive.google.com/file/d/10SrO5433USbRNwQY1ofHJLq7HrljYeYB/view?usp=drivesdk" target="_blank" style="color:#3b82f6;text-decoration:underline;">
-      Buka QRIS
-    </a>
-  </p>
-
-  <p style="margin-top:10px;color:#facc15;font-weight:bold;font-size:15px;">
-    Setelah transaksi selesai, harap screenshot sebagai bukti pembayaran 😉
-  </p>
-
-  <button class="chat" onclick="chatWA()" style="background:#22c55e;color:white;font-weight:bold;padding:12px;border:none;border-radius:8px;width:100%;margin-top:12px;cursor:pointer;">
-    Saya Sudah Bayar → Chat Penjual
-  </button>
+    <h3>Scan QRIS untuk bayar</h3>
+    <!-- Link QR sebagai link, bukan gambar -->
+    <p>
+      <a href="https://drive.google.com/file/d/10SrO5433USbRNwQY1ofHJLq7HrljYeYB/view?usp=drivesdk" target="_blank" style="color:#3b82f6;font-weight:bold;">
+        Klik di sini untuk buka QRIS 🔗
+      </a>
+    </p>
+    <p>Setelah transaksi selesai, harap screenshot sebagai bukti pembayaran 😉</p>
+    <button class="chat" onclick="chatWA()">Saya Sudah Bayar → Chat Penjual</button>
+  </div>
 </div>
 
+<!-- PROMO SECTION -->
+<div class="promo-section">
+  <h2>Cek testimoni, hubungi Paryyxd 😉</h2>
+  <div class="buttons">
+    <a href="https://whatsapp.com/channel/0029Vb7fBuk2ER6qD8lL9i1H" target="_blank" class="btn wa">
+      💬 WA Testimoni
+    </a>
+    <a href="https://www.tiktok.com/@paryyxd?_r=1&_t=ZS-93t31kDq8yl" target="_blank" class="btn tiktok">
+      🎵 Follow TikTok Paryyxd
+    </a>
+    <a href="https://chat.whatsapp.com/KdGG9iYVDKy3R6dUB8zeKt?mode=gi_c" target="_blank" class="btn zvs">
+      ⚔️ Join ZVS Trial
+    </a>
+  </div>
 </div>
 
 <script>
-let nominal="";
+let nominal = "";
 
 function pilih(el){
-  document.querySelectorAll(".item")
-    .forEach(i=>i.classList.remove("active"));
+  document.querySelectorAll(".item").forEach(i => i.classList.remove("active"));
   el.classList.add("active");
   nominal = el.innerText;
 }
 
 function showQRIS(){
-  const id=document.getElementById("userid").value;
-
-  if(id==="" || nominal===""){
+  const id = document.getElementById("userid").value;
+  if(id === "" || nominal === ""){
     alert("Isi ID & pilih nominal dulu 🙂");
     return;
   }
-
-  document.getElementById("qrisBox").style.display="block";
+  document.getElementById("qrisBox").style.display = "block";
 }
 
 function chatWA(){
-  const id=document.getElementById("userid").value;
-
-  const msg =
-`Halo admin Paryyxd Storeメ
+  const id = document.getElementById("userid").value;
+  const msg = `Halo admin Paryyxd Store
 Saya sudah bayar via QRIS
 
 ID: ${id}
 Nominal: ${nominal}`;
-
   window.open(
-    "https://wa.me/6281350505038?text="+encodeURIComponent(msg),
+    "https://wa.me/6281350505038?text=" + encodeURIComponent(msg),
     "_blank"
   );
 }
 </script>
-
 </body>
 </html>
