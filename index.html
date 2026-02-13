@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paryyxd Storeメ | Blood Strike</title>
+
+<style>
+body{margin:0;font-family:sans-serif;background:#05070d;color:white;}
+header{text-align:center;padding:20px;background:#0f172a;}
+header h1{color:#00e5ff;margin:0;}
+
+.container{max-width:500px;margin:auto;padding:15px;}
+.card{background:#111827;padding:15px;border-radius:10px;margin-top:12px;}
+
+input{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  margin-top:8px;
+}
+
+.item{
+  background:#1f2937;
+  padding:12px;
+  border-radius:8px;
+  margin-top:8px;
+  cursor:pointer;
+}
+.item.active{
+  background:#00e5ff;
+  color:black;
+  font-weight:bold;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.qris{background:#3b82f6;color:white;}
+.chat{background:#22c55e;color:white;}
+
+#qrisBox{
+  display:none;
+  text-align:center;
+}
+#qrisBox a{
+  color:#3b82f6;
+  text-decoration:underline;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Paryyxd Storeメ</h1>
+  <p>Top Up Blood Strike ⚡</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h3>ID Blood Strike</h3>
+    <input type="text" id="userid" placeholder="Masukkan User ID">
+  </div>
+
+  <div class="card">
+    <h3>Pilih Gold 💎</h3>
+
+    <div class="item" onclick="pilih(this)">100 + 5 Gold — Rp13.000</div>
+    <div class="item" onclick="pilih(this)">300 + 20 Gold — Rp34.000</div>
+    <div class="item" onclick="pilih(this)">500 + 40 Gold — Rp55.000</div>
+    <div class="item" onclick="pilih(this)">1000 + 100 Gold — Rp108.000</div>
+    <div class="item" onclick="pilih(this)">2000 + 260 Gold — Rp213.000</div>
+    <div class="item" onclick="pilih(this)">5000 + 800 Gold — Rp529.000</div>
+
+    <button class="qris" onclick="showQRIS()">Bayar via QRIS</button>
+  </div>
+
+  <div class="card" id="qrisBox">
+  <h3>Scan QRIS untuk bayar</h3>
+
+  <p style="font-size:16px;">
+    QRIS kamu bisa dibuka di sini:<br>
+    <a href="https://drive.google.com/file/d/10SrO5433USbRNwQY1ofHJLq7HrljYeYB/view?usp=drivesdk" target="_blank" style="color:#3b82f6;text-decoration:underline;">
+      Buka QRIS
+    </a>
+  </p>
+
+  <p style="margin-top:10px;color:#facc15;font-weight:bold;font-size:15px;">
+    Setelah transaksi selesai, harap screenshot sebagai bukti pembayaran 😉
+  </p>
+
+  <button class="chat" onclick="chatWA()" style="background:#22c55e;color:white;font-weight:bold;padding:12px;border:none;border-radius:8px;width:100%;margin-top:12px;cursor:pointer;">
+    Saya Sudah Bayar → Chat Penjual
+  </button>
+</div>
+
+</div>
+
+<script>
+let nominal="";
+
+function pilih(el){
+  document.querySelectorAll(".item")
+    .forEach(i=>i.classList.remove("active"));
+  el.classList.add("active");
+  nominal = el.innerText;
+}
+
+function showQRIS(){
+  const id=document.getElementById("userid").value;
+
+  if(id==="" || nominal===""){
+    alert("Isi ID & pilih nominal dulu 🙂");
+    return;
+  }
+
+  document.getElementById("qrisBox").style.display="block";
+}
+
+function chatWA(){
+  const id=document.getElementById("userid").value;
+
+  const msg =
+`Halo admin Paryyxd Storeメ
+Saya sudah bayar via QRIS
+
+ID: ${id}
+Nominal: ${nominal}`;
+
+  window.open(
+    "https://wa.me/6281350505038?text="+encodeURIComponent(msg),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
