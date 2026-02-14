@@ -1,128 +1,183 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Paryyxd Storeメ | Blood Strike</title>
+<title>Paryyxd Store | Blood Strike</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #05070d;
-  color: white;
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#05070d;
+  color:white;
 }
-header {
-  text-align: center;
-  padding: 20px;
-  background: #0f172a;
+header{
+  text-align:center;
+  padding:20px;
+  background:#0f172a;
 }
-header h1 {
-  color: #00e5ff;
-  margin: 0;
+header h1{
+  color:#00e5ff;
+  margin:0;
 }
-.container {
-  max-width: 500px;
-  margin: auto;
-  padding: 15px;
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:15px;
 }
-.card {
-  background: #111827;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 12px;
+.card{
+  background:#111827;
+  padding:15px;
+  border-radius:10px;
+  margin-top:12px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.8s forwards;
 }
-input {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 8px;
+@keyframes fadeUp{
+  to {opacity:1; transform:translateY(0);}
 }
-.item {
-  background: #1f2937;
-  padding: 12px;
-  border-radius: 8px;
-  margin-top: 8px;
-  cursor: pointer;
+input{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  margin-top:8px;
 }
-.item.active {
-  background: #00e5ff;
-  color: black;
-  font-weight: bold;
+.item{
+  background:#1f2937;
+  padding:12px;
+  border-radius:8px;
+  margin-top:8px;
+  cursor:pointer;
+  transition: all 0.3s;
 }
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
+.item:hover{
+  background:#374151;
 }
-.qris { background: #3b82f6; color: white; }
-.chat { background: #22c55e; color: white; }
-#qrisBox {
-  display: none;
-  text-align: center;
+.item.active{
+  background:#00e5ff;
+  color:black;
+  font-weight:bold;
 }
-#qrisBox img {
-  width: 220px;
-  margin-top: 10px;
-  border-radius: 10px;
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+button:hover{
+  opacity:0.9;
+  box-shadow: 0 0 15px #00e5ff;
+}
+.qris{
+  background:#3b82f6;
+  color:white;
+  box-shadow:0 0 10px #3b82f6;
+  transition:all 0.3s;
+}
+.qris:hover{
+  box-shadow:0 0 25px #3b82f6;
+}
+.chat{
+  background:#22c55e;
+  color:white;
+  box-shadow:0 0 10px #22c55e;
+}
+.chat:hover{
+  box-shadow:0 0 25px #22c55e;
 }
 
-/* PROMO SECTION */
-.promo-section {
-  text-align: center;
-  padding: 25px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 12px;
-  margin: 20px auto;
-  max-width: 500px;
-  color: white;
+/* QRIS Section */
+#qrisBox{
+  display:none;
+  text-align:center;
+  margin-top:12px;
+  animation:fadeUp 0.8s forwards;
 }
-.promo-section h2 {
-  margin-bottom: 20px;
-  font-size: 20px;
+.qris-link{
+  display:inline-block;
+  background:#111827;
+  color:#3b82f6;
+  padding:12px 15px;
+  border-radius:8px;
+  text-decoration:none;
+  margin-top:10px;
+  font-weight:bold;
+  transition: all 0.3s, box-shadow 0.3s;
+  box-shadow:0 0 8px #3b82f6;
+}
+.qris-link:hover{
+  box-shadow:0 0 20px #3b82f6;
+}
+.qris-text{
+  margin-top:10px;
+  color:#9ca3af;
+  font-size:14px;
+  line-height:1.4;
+}
+
+/* Promo Section */
+.promo-section{
+  text-align:center;
+  padding:25px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius:12px;
+  margin:20px auto;
+  max-width:500px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.8s forwards 0.3s;
+}
+.promo-section h2{
+  margin-bottom:20px;
+  font-size:20px;
   animation: pulse 1.5s infinite;
 }
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
 }
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
-.btn {
-  display: inline-block;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  transition: transform 0.2s, box-shadow 0.2s;
+.btn{
+  display:inline-block;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+  text-decoration:none;
+  color:white;
+  transition:all 0.3s, box-shadow 0.3s;
 }
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.5);
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 20px rgba(0,229,255,0.7);
 }
-.btn.wa { background: #25d366; }
-.btn.tiktok { background: #ff0050; }
-.btn.zvs { background: #3b82f6; }
+.btn.wa{background:#25d366; box-shadow:0 0 8px #25d366;}
+.btn.wa:hover{box-shadow:0 0 20px #25d366;}
+.btn.tiktok{background:#ff0050; box-shadow:0 0 8px #ff0050;}
+.btn.tiktok:hover{box-shadow:0 0 20px #ff0050;}
+.btn.zvs{background:#3b82f6; box-shadow:0 0 8px #3b82f6;}
+.btn.zvs:hover{box-shadow:0 0 20px #3b82f6;}
 </style>
 </head>
-
 <body>
+
 <header>
-  <h1>Paryyxd Storeメ</h1>
+  <h1>Paryyxd Store</h1>
   <p>Top Up Blood Strike ⚡</p>
 </header>
 
 <div class="container">
+
   <div class="card">
     <h3>ID Blood Strike</h3>
     <input type="text" id="userid" placeholder="Masukkan User ID">
@@ -136,68 +191,72 @@ button {
     <div class="item" onclick="pilih(this)">1000 + 100 Gold — Rp108.000</div>
     <div class="item" onclick="pilih(this)">2000 + 260 Gold — Rp213.000</div>
     <div class="item" onclick="pilih(this)">5000 + 800 Gold — Rp529.000</div>
+
     <button class="qris" onclick="showQRIS()">Bayar via QRIS</button>
-  </div>
 
-  <div class="card" id="qrisBox">
-    <h3>Scan QRIS untuk bayar</h3>
-    <!-- Link QR sebagai link, bukan gambar -->
-    <p>
-      <a href="https://drive.google.com/file/d/10SrO5433USbRNwQY1ofHJLq7HrljYeYB/view?usp=drivesdk" target="_blank" style="color:#3b82f6;font-weight:bold;">
-        Klik di sini untuk buka QRIS 🔗
+    <!-- QRIS muncul di sini setelah klik -->
+    <div id="qrisBox">
+      <a class="qris-link" href="https://drive.google.com/file/d/10SrO5433USbRNwQY1ofHJLq7HrljYeYB/view?usp=drivesdk" target="_blank">
+        Klik untuk dapetin QRIS
       </a>
-    </p>
-    <p>Setelah transaksi selesai, harap screenshot sebagai bukti pembayaran 😉</p>
-    <button class="chat" onclick="chatWA()">Saya Sudah Bayar → Chat Penjual</button>
-  </div>
-</div>
+      <p class="qris-text">
+        Setelah transaksi selesai, harap screenshot sebagai bukti pembayaran 🫡<br>
+        Lalu segera hubungi admin Paryyxd untuk konfirmasi pesananmu
+      </p>
+      <button class="chat" onclick="chatWA()">Saya Sudah Bayar → Chat Penjual</button>
+    </div>
 
-<!-- PROMO SECTION -->
-<div class="promo-section">
-  <h2>Cek testimoni, hubungi Paryyxd 😉</h2>
-  <div class="buttons">
-    <a href="https://whatsapp.com/channel/0029Vb7fBuk2ER6qD8lL9i1H" target="_blank" class="btn wa">
-      💬 WA Testimoni
-    </a>
-    <a href="https://www.tiktok.com/@paryyxd?_r=1&_t=ZS-93t31kDq8yl" target="_blank" class="btn tiktok">
-      🎵 Follow TikTok Paryyxd
-    </a>
-    <a href="https://chat.whatsapp.com/KdGG9iYVDKy3R6dUB8zeKt?mode=gi_c" target="_blank" class="btn zvs">
-      ⚔️ Join ZVS Trial
-    </a>
   </div>
+
+  <!-- Promo Section -->
+  <div class="promo-section">
+    <h2>Cek testimoni, hubungi Paryyxd 😉</h2>
+    <div class="buttons">
+      <a href="https://whatsapp.com/channel/0029Vb7fBuk2ER6qD8lL9i1H" target="_blank" class="btn wa">
+        💬 WA Testimoni
+      </a>
+      <a href="https://www.tiktok.com/@paryyxd?_r=1&_t=ZS-93t31kDq8yl" target="_blank" class="btn tiktok">
+        🎵 Follow TikTok Paryyxd
+      </a>
+      <a href="https://chat.whatsapp.com/KdGG9iYVDKy3R6dUB8zeKt?mode=gi_c" target="_blank" class="btn zvs">
+        ⚔️ Join ZVS Trial
+      </a>
+    </div>
+  </div>
+
 </div>
 
 <script>
-let nominal = "";
-
+let nominal="";
 function pilih(el){
-  document.querySelectorAll(".item").forEach(i => i.classList.remove("active"));
+  document.querySelectorAll(".item").forEach(i=>i.classList.remove("active"));
   el.classList.add("active");
   nominal = el.innerText;
 }
 
 function showQRIS(){
-  const id = document.getElementById("userid").value;
-  if(id === "" || nominal === ""){
-    alert("Isi ID & pilih nominal dulu 🙂");
+  const id=document.getElementById("userid").value;
+  if(id==="" || nominal===""){
+    alert("Isi ID & pilih nominal dulu 😉");
     return;
   }
-  document.getElementById("qrisBox").style.display = "block";
+  document.getElementById("qrisBox").style.display="block";
 }
 
 function chatWA(){
-  const id = document.getElementById("userid").value;
+  const id=document.getElementById("userid").value;
   const msg = `Halo admin Paryyxd Store
+
 Saya sudah bayar via QRIS
 
 ID: ${id}
 Nominal: ${nominal}`;
   window.open(
-    "https://wa.me/6281350505038?text=" + encodeURIComponent(msg),
+    "https://wa.me/6281350505038?text="+encodeURIComponent(msg),
     "_blank"
   );
 }
 </script>
+
 </body>
 </html>
